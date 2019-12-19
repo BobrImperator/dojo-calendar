@@ -21,6 +21,14 @@ export default class DojoCalendar extends Component {
     12
   ]
 
+  dojos = [
+    {
+      name: "Dojo 223",
+      date: "2019-11-20",
+      person: "Mikoscz"
+    }
+  ]
+
   @action
   selectDate(date) {
     this.selectedDate = date;

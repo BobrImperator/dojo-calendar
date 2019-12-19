@@ -6,7 +6,12 @@ export default class DojoCalendar extends Component {
 
     for (let index = 1; index <= 31; index++) {
       const date = `2019-${this.args.month}-${index}`
-      dates.push(date);
+      const dojo = this.args.dojos.find((dojo) => dojo.date === date);
+
+      const person = dojo ? dojo.person : "";
+      const displayValue = `${date} ${person}`
+
+      dates.push(displayValue);
     }
 
     return dates;
