@@ -5,5 +5,9 @@
 <div
   ...attributes
 >
-  Div
+  {{#each this.dates as |date|}}
+    <div>
+      {{date}}
+    </div>
+  {{/each}}
 </div>
