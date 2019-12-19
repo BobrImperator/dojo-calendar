@@ -5,16 +5,18 @@ import { action } from '@ember/object';
 export default class DojoCalendar extends Component {
   @tracked selectedDate;
   @tracked currentMonth = 1;
+  
   @tracked
   newEventForm = {};
 
+  @tracked
   dojos = [
     {
       name: "Dojo 223",
       date: "2019-11-20",
       person: "Mikoscz"
     }
-  ]
+  ];
 
   months = [
     1,
@@ -47,6 +49,7 @@ export default class DojoCalendar extends Component {
     dojos.push(this.newEventForm);
 
     this.dojos = dojos;
+    this.newEventForm = {};
   }
 
   @action
