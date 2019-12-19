@@ -25,9 +25,12 @@
   @selectDate={{this.selectDate}}
   @month={{this.currentMonth}}
   @dojos={{this.dojos}}
+  @dates={{this.dates}}
 />
 
-<form>
+<form
+  {{on "submit" this.createDojo}}
+>
   <label
     for="form-name"
   >
