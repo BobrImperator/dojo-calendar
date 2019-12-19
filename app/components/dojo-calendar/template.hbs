@@ -1,19 +1,34 @@
-{{this.selectedDate}}
-
-<div
-  ...attributes
->
-  {{#each this.dates as |date|}}
-    <button
-      {{on "click" (fn this.selectDate date)}}
-      type="button"
-    >
-      {{date}}
-    </button>
-  {{/each}}
+<div>
+  current month: {{this.currentMonth}}
 </div>
+
+<div>
+  current date: {{this.selectedDate}}
+</div>
+
+
+<button
+  type="button"
+  {{on "click" this.previousMonth}}
+>
+  Previous
+</button>
+
+<button
+  type="button"
+  {{on "click" this.nextMonth}}
+>
+  Next
+</button>
+
+<DojoCalendar::Month
+  @selectDate={{this.selectDate}}
+  @month={{this.currentMonth}}
+/>
 
 
 // eventListeners
 // Curried Functions
 // Decorators
+// closure actions
+  - research #TODO

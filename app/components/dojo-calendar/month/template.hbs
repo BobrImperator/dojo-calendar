@@ -1,0 +1,12 @@
+<div
+  ...attributes
+>
+  {{#each this.dates as |date|}}
+    <button
+      {{on "click" (fn @selectDate date)}}
+      type="button"
+    >
+      {{date}}
+    </button>
+  {{/each}}
+</div>
