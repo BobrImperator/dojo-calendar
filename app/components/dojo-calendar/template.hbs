@@ -27,6 +27,39 @@
   @dojos={{this.dojos}}
 />
 
+<form>
+  <label
+    for="form-name"
+  >
+    Event Name: {{this.newEventForm.name}}
+  </label>
+
+  <input
+    type="text"
+    id="form-name"
+    value={{this.newEventForm.name}}
+    {{on "change" (fn this.setField "name")}}
+  />
+
+  <label
+    for="form-person"
+  >
+    Person: {{this.newEventForm.person}}
+  </label>
+
+  <input
+    type="text"
+    id="form-person"
+    value={{this.newEventForm.person}}
+    {{on "change" (fn this.setField "person")}}
+  />
+
+  <button
+    type="submit"
+  >
+    Submit dojo for date: {{this.newEventForm.date}}
+  </button>
+</form>
 
 // eventListeners
 // Curried Functions

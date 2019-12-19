@@ -6,6 +6,9 @@ export default class DojoCalendar extends Component {
   @tracked selectedDate;
   @tracked currentMonth = 1;
 
+  @tracked
+  newEventForm = {};
+
   months = [
     1,
     2,
@@ -32,6 +35,26 @@ export default class DojoCalendar extends Component {
   @action
   selectDate(date) {
     this.selectedDate = date;
+
+    this.setField("date", date);
+  }
+
+  @action
+  createDojo() {
+
+  }
+
+  @action
+  setField(formProperty, event) {
+    const { newEventForm } = this;
+
+    if (typeof event === "object") {
+      newEventForm[formProperty] = event.target.value;
+    } else {
+      newEventForm[formProperty] = event;
+    }
+
+    this.newEventForm = newEventForm;
   }
 
   @action
