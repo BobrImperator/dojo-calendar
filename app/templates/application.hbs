@@ -1,5 +1,7 @@
 {{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
+<WelcomePage
+  {{did-insert (fn this.logMe)}}
+/>
 {{!-- Feel free to remove this! --}}
 
 {{outlet}}
