@@ -1,13 +1,19 @@
-{{@hello}}
-{{this.helloFromComponent}}
-{{this.getHello}}
+{{this.selectedDate}}
 
 <div
   ...attributes
 >
   {{#each this.dates as |date|}}
-    <div>
+    <button
+      {{on "click" (fn this.selectDate date)}}
+      type="button"
+    >
       {{date}}
-    </div>
+    </button>
   {{/each}}
 </div>
+
+
+// eventListeners
+// Curried Functions
+// Decorators
