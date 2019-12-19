@@ -1,0 +1,69 @@
+<div>
+  current month: {{this.currentMonth}}
+</div>
+
+<div>
+  current date: {{this.selectedDate}}
+</div>
+
+<button
+  type="button"
+  {{on "click" this.previousMonth}}
+>
+  Previous
+</button>
+
+<button
+  type="button"
+  {{on "click" this.nextMonth}}
+>
+  Next
+</button>
+
+<DojoCalendar::Month
+  @selectDate={{this.selectDate}}
+  @month={{this.currentMonth}}
+  @dojos={{this.dojos}}
+  @dates={{this.dates}}
+/>
+
+<form
+  {{on "submit" this.createDojo}}
+>
+  <label
+    for="form-name"
+  >
+    Event Name: {{this.newEventForm.name}}
+  </label>
+
+  <input
+    type="text"
+    id="form-name"
+    value={{this.newEventForm.name}}
+    {{on "change" (fn this.setField "name")}}
+  />
+
+  <label
+    for="form-person"
+  >
+    Person: {{this.newEventForm.person}}
+  </label>
+
+  <input
+    type="text"
+    id="form-person"
+    value={{this.newEventForm.person}}
+    {{on "change" (fn this.setField "person")}}
+  />
+
+  <button
+    type="submit"
+  >
+    Submit dojo for date: {{this.newEventForm.date}}
+  </button>
+</form>
+
+// eventListeners
+// Curried Functions
+// Decorators
+// closure actions
